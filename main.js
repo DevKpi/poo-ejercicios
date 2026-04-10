@@ -12,12 +12,18 @@
     frenar() {
         this.velocidad -=10;
     }
+
+    frenarFuerte() {
+        this.velocidad = 0;
+    }
 }
 
 const miAuto = new Auto("BMW", "M3");
 
 miAuto.acelerar();
-console.log(miAuto.velocidad + miAuto.velocidad + " " + miAuto.marca); */
+console.log(miAuto.velocidad + miAuto.velocidad + " " + miAuto.marca); 
+
+miAuto.frenarFuerte(); */
 
 /*const mascota = {
     nombre: "Toby",
