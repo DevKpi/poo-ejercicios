@@ -12,18 +12,12 @@
     frenar() {
         this.velocidad -=10;
     }
-
-    frenarFuerte() {
-        this.velocidad = 0;
-    }
 }
 
 const miAuto = new Auto("BMW", "M3");
 
 miAuto.acelerar();
-console.log(miAuto.velocidad + miAuto.velocidad + " " + miAuto.marca); 
-
-miAuto.frenarFuerte(); */
+console.log(miAuto.velocidad + miAuto.velocidad + " " + miAuto.marca); */
 
 /*const mascota = {
     nombre: "Toby",
@@ -129,21 +123,125 @@ persona1.depositar(10);
 persona1.depositar(1);
 persona1.mostrarSaldo(); */
 
-class Libro{
-    constructor(titulo, autor, paginas)
-    {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.paginas = paginas;
+// class Libro{
+//     constructor(titulo, autor, paginas)
+//     {
+//         this.titulo = titulo;
+//         this.autor = autor;
+//         this.paginas = paginas;
+//     }
+
+//     mostrarInfo(){
+//         console.log('El libro ' + this.titulo + ' del autor ' + this.autor + ' tiene ' + this.paginas + ' páginas');
+//     }
+// }
+
+// const libro = new Libro('"Comentarios al Naucrato"', 'Rebord, Tomas', 267);
+// const libro2 = new Libro('"El archivo de las tormentas"', 'Sanderson Brandon', 6000);
+
+// libro.mostrarInfo();
+// libro2.mostrarInfo();
+
+/*class CuentaBancaria {
+    #saldo;
+
+
+    constructor(titular, saldoInicial) {
+        this.titular = titular;
+        this.#saldo = saldoInicial;
     }
 
-    mostrarInfo(){
-        console.log('El libro ' + this.titulo + ' del autor ' + this.autor + ' tiene ' + this.paginas + ' páginas');
+
+    depositar(monto) {
+        if (monto <= 0) {
+            throw new Error("Monto inválido");
+        }
+        this.#saldo += monto;
+    }
+
+
+    retirar(monto) {
+        if (monto > this.#saldo) {
+            throw new Error("Fondos insuficientes");
+        }
+        this.#saldo -= monto;
+    }
+
+
+    getSaldo() {
+        return console.log(this.#saldo);
     }
 }
 
-const libro = new Libro('"Comentarios al Naucrato"', 'Rebord, Tomas', 267);
-const libro2 = new Libro('"El archivo de las tormentas"', 'Sanderson Brandon', 6000);
+const cuenta = new CuentaBancaria("Thiago", 1500);
 
-libro.mostrarInfo();
-libro2.mostrarInfo();
+cuenta.getSaldo();
+cuenta.saldo = 100;
+cuenta.depositar(100);
+cuenta.getSaldo();*/
+
+/*class Usuario{
+    #clave
+    constructor(nombre, pass){
+        this.nombre = nombre;
+        this.#clave = pass;
+    }
+
+    validarPassword(pass){
+        if(this.#clave == pass) {
+            return console.log("Clave correcta");
+        }
+        else 
+            {
+            return console.log("Clave incorrecta");
+        }
+    }
+
+    cambiarPassword(nueva){
+        let largonueva = nueva.length;
+        if((largonueva >= 4) && (largonueva <= 8)){
+            this.#clave = nueva;
+            return console.log("Cambiaste la contraseña");
+        }
+        else{
+            return console.log("La contraseña debe tener entre 4 y 8 caracteres");
+        }
+        
+    }
+}
+
+const user = new Usuario("Thiago", "123");
+
+user.validarPassword("123");
+user.validarPassword("1234");
+user.cambiarPassword("123456");
+user.validarPassword("123456");
+
+class Producto{
+    #precio
+    constructor(nombre, precio){
+        this.nombre = nombre;
+        this.#precio = precio;
+    }
+
+    setPrecio(valor){
+        if(valor > 0){
+            this.#precio = valor;
+            return console.log("Cambiaste el valor del producto");
+        }
+        else{
+            return console.log("El valor del producto debe ser mayor a 0");
+        }
+    }
+
+    getPrecio(){
+        return console.log("El valor de " + this.nombre + "es de " + this.#precio);
+    }
+}
+
+const azucarledesma = new Producto("Azucar Ledesma", 100);
+
+azucarledesma.getPrecio();
+azucarledesma.setPrecio(100);
+azucarledesma.setPrecio(0);*/
+
