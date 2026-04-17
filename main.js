@@ -30,7 +30,7 @@ console.log(miAuto.velocidad + miAuto.velocidad + " " + miAuto.marca); */
 }
 
 
-mascota.saludar();*/    
+mascota.saludar();*/
 
 /*class Alumno {
     constructor(nombre, notas) {
@@ -259,9 +259,9 @@ class CuentaBancaria {
         if (monto <= 0) {
             throw new Error("Monto inválido");
         }
-        
+
         this.#saldo += monto;
-        console.log( this.titular + " depositaste exitosamente " + monto);
+        console.log(this.titular + " depositaste exitosamente " + monto);
         let textoHistorial = "Depósito de un total de " + monto;
         this.setHistorial(textoHistorial);
     }
@@ -271,31 +271,31 @@ class CuentaBancaria {
         if (monto > this.#saldo) {
             throw new Error("Fondos insuficientes");
         }
-        else if ( (monto > 1000) && (monto < 2000) ){
+        else if ((monto > 1000) && (monto < 2000)) {
 
             this.#saldo -= monto;
 
             let textoHistorial = "Depósito de un total de " + monto;
             this.setHistorial(textoHistorial);
 
-            console.log( this.titular + " retiraste exitosamente " + monto);
+            console.log(this.titular + " retiraste exitosamente " + monto);
         }
-        else{
+        else {
             throw new Error("El minimo de retiro por extracción es de 1000 y el máximo de 2000");
         }
-        
+
     }
 
-    setHistorial(textoHistorial){
+    setHistorial(textoHistorial) {
         let fecha = new Date();
-            this.historial.push(textoHistorial + ' el día ' + fecha.getDate() + '/' + fecha.getMonth() + '/' + fecha.getFullYear());
+        this.historial.push(textoHistorial + ' el día ' + fecha.getDate() + '/' + fecha.getMonth() + '/' + fecha.getFullYear());
     }
 
     getSaldo() {
         return console.log(this.#saldo);
     }
 
-    historialRetiros(){
+    historialRetiros() {
         return console.log(this.historial);
     }
 }
