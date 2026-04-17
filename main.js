@@ -245,3 +245,56 @@ azucarledesma.getPrecio();
 azucarledesma.setPrecio(100);
 azucarledesma.setPrecio(0);*/
 
+class CuentaBancaria {
+    #saldo;
+
+
+    constructor(titular, saldoInicial) {
+        this.titular = titular;
+        this.#saldo = saldoInicial;
+        this.historial = [];
+    }
+
+
+    depositar(monto) {
+        if (monto <= 0) {
+            throw new Error("Monto inválido");
+        }
+        this.#saldo += monto;
+    }
+
+
+    retirar(monto) {
+        if (monto > this.#saldo) {
+            throw new Error("Fondos insuficientes");
+        }
+        else if ( (monto > 1000) && (monto < 2000) ){
+
+            let fecha = new Date();
+            
+
+            this.#saldo -= monto;
+            this.historial.push('Retiro de un total de ' + monto + ' el día ' + fecha.getDate() + '/' + fecha.getMonth() + '/' + fecha.getFullYear());
+            console.log( this.titular + " retiraste exitosamente " + monto);
+        }
+        else{
+            throw new Error("El minimo de retiro por extracción es de 1000 y el máximo de 2000");
+        }
+        
+    }
+
+
+    getSaldo() {
+        return console.log(this.#saldo);
+    }
+
+    historialRetiros(){
+        return console.log(this.historial);
+    }
+}
+
+const cuenta = new CuentaBancaria("Thiago", 15000);
+
+cuenta.retirar(1100);
+cuenta.retirar(1200);
+cuenta.historialRetiros();
