@@ -245,64 +245,149 @@ azucarledesma.getPrecio();
 azucarledesma.setPrecio(100);
 azucarledesma.setPrecio(0);*/
 
-class CuentaBancaria {
-    #saldo;
+// class CuentaBancaria {
+//     #saldo;
 
 
-    constructor(titular, saldoInicial) {
-        this.titular = titular;
-        this.#saldo = saldoInicial;
-        this.historial = [];
+//     constructor(titular, saldoInicial) {
+//         this.titular = titular;
+//         this.#saldo = saldoInicial;
+//         this.historial = [];
+//     }
+
+//     depositar(monto) {
+//         if (monto <= 0) {
+//             throw new Error("Monto inválido");
+//         }
+
+//         this.#saldo += monto;
+//         console.log(this.titular + " depositaste exitosamente " + monto);
+//         let textoHistorial = "Depósito de un total de " + monto;
+//         this.setHistorial(textoHistorial);
+//     }
+
+
+//     retirar(monto) {
+//         if (monto > this.#saldo) {
+//             throw new Error("Fondos insuficientes");
+//         }
+//         else if ((monto > 1000) && (monto < 2000)) {
+
+//             this.#saldo -= monto;
+
+//             let textoHistorial = "Depósito de un total de " + monto;
+//             this.setHistorial(textoHistorial);
+
+//             console.log(this.titular + " retiraste exitosamente " + monto);
+//         }
+//         else {
+//             throw new Error("El minimo de retiro por extracción es de 1000 y el máximo de 2000");
+//         }
+
+//     }
+
+//     setHistorial(textoHistorial) {
+//         let fecha = new Date();
+//         this.historial.push(textoHistorial + ' el día ' + fecha.getDate() + '/' + fecha.getMonth() + '/' + fecha.getFullYear());
+//     }
+
+//     getSaldo() {
+//         return console.log(this.#saldo);
+//     }
+
+//     historialRetiros() {
+//         return console.log(this.historial);
+//     }
+// }
+
+// const cuenta = new CuentaBancaria("Thiago", 15000);
+
+// cuenta.retirar(1100);
+// cuenta.retirar(1200);
+// cuenta.depositar(100);
+// cuenta.historialRetiros();
+
+// class Animal {
+//     constructor(nombre) {
+//         this.nombre = nombre;
+//     }
+
+//     HacerSonido(){
+//         console.log("Sonido generico");
+//     }
+
+//     Nombre(){
+//         console.log(this.nombre);
+//     }
+// }
+
+
+// class Perro extends Animal {
+//     constructor(nombre, raza){
+//         super(nombre);
+//         this.raza = raza;
+//     }
+
+//     Ladrar(){
+//         console.log("Guau");
+//     }
+// }
+// class Gato extends Animal {
+//     constructor(nombre, color){
+//         super(nombre);
+//         this.color = color;
+//     }
+
+//     Maullar(){
+//         console.log("Miau");
+//     }
+
+// }
+
+// const p = new Perro("Tobi", "Labrador");
+// const g = new Gato("Michi", "naranja");
+
+// p.Ladrar();
+// g.Maullar();
+// p.Nombre();
+// g.Nombre();
+
+// Act 4
+
+class Invitado{
+    constructor(nombre){
+        this.nombre = "Invitado";
     }
 
-    depositar(monto) {
-        if (monto <= 0) {
-            throw new Error("Monto inválido");
-        }
-
-        this.#saldo += monto;
-        console.log(this.titular + " depositaste exitosamente " + monto);
-        let textoHistorial = "Depósito de un total de " + monto;
-        this.setHistorial(textoHistorial);
-    }
-
-
-    retirar(monto) {
-        if (monto > this.#saldo) {
-            throw new Error("Fondos insuficientes");
-        }
-        else if ((monto > 1000) && (monto < 2000)) {
-
-            this.#saldo -= monto;
-
-            let textoHistorial = "Depósito de un total de " + monto;
-            this.setHistorial(textoHistorial);
-
-            console.log(this.titular + " retiraste exitosamente " + monto);
-        }
-        else {
-            throw new Error("El minimo de retiro por extracción es de 1000 y el máximo de 2000");
-        }
-
-    }
-
-    setHistorial(textoHistorial) {
-        let fecha = new Date();
-        this.historial.push(textoHistorial + ' el día ' + fecha.getDate() + '/' + fecha.getMonth() + '/' + fecha.getFullYear());
-    }
-
-    getSaldo() {
-        return console.log(this.#saldo);
-    }
-
-    historialRetiros() {
-        return console.log(this.historial);
+    Ingreso(){
+        console.log(this.nombre + ' ha ingresado');
     }
 }
 
-const cuenta = new CuentaBancaria("Thiago", 15000);
+class Usuario{
+    constructor(nombre){
+        this.nombre = nombre;
+    }
 
-cuenta.retirar(1100);
-cuenta.retirar(1200);
-cuenta.depositar(100);
-cuenta.historialRetiros();
+    Ingreso(){
+        console.log('El usuario ' + this.nombre + ' ha ingresado al sistema');
+    }
+}
+
+class Admin extends Usuario{
+    constructor(nombre, rango){
+        super(nombre);
+        this.rango = rango;
+    }
+
+    Alerta(){
+        console.log('El administrador ' + this.nombre + ' (rango: ' + this.rango + ')' + ' ha enviado una alerta');
+    }
+}
+
+const adm = new Admin("Thiago", "Super Admin");
+adm.Alerta();
+const user = new Usuario("Mario");
+user.Ingreso();
+const inv = new Invitado();
+inv.Ingreso();
