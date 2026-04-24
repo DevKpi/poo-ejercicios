@@ -354,7 +354,7 @@ azucarledesma.setPrecio(0);*/
 
 // Act 4
 
-class Invitado{
+/*class Invitado{
     constructor(nombre){
         this.nombre = "Invitado";
     }
@@ -403,4 +403,109 @@ const inv = new Invitado();
 inv.Ingreso();
 
 user.ListaPermisos();
-adm.ListaPermisos();
+adm.ListaPermisos();*/
+
+// Act 5
+
+/*class Persona {
+    constructor(nombre){
+        this.nombre = nombre;
+    }
+
+    Presentarse(){
+        console.log('Me presento, soy ' + this.nombre);
+    }
+}
+
+class Alumno extends Persona{
+    constructor(nombre){
+        super(nombre);
+    }
+
+    Presentarse(){
+        console.log('Me presento, soy el alumno ' + this.nombre);
+    }
+
+    Estudiar(){
+        console.log('El alumno ' + this.nombre + ' ahora se encuentra estudiando.');
+    }
+}
+
+class Profesor extends Persona{
+    constructor(nombre){
+        super(nombre);
+    }
+
+    Presentarse(){
+        console.log('Me presento, soy el profesor ' + this.nombre);
+    }
+
+    Enseñar(){
+        console.log('El profesor ' + this.nombre + ' está enseñando.');
+    }
+}
+
+const persona = new Persona('Mario');
+persona.Presentarse();
+
+const alumno = new Alumno('José');
+alumno.Presentarse();
+alumno.Estudiar();
+
+const profe = new Profesor('Gamal');
+profe.Presentarse();
+profe.Enseñar();
+*/
+
+// Act 6
+
+class Producto{
+    #precio;
+
+    constructor(nombre, precio){
+        this.nombre = nombre;
+        this.#precio = precio;   
+    }
+
+    calcularPrecioFinal(){
+        let preciofinal = this.#precio;
+        console.log(preciofinal);
+    }
+}
+
+class ProductoFisico extends Producto{
+    #precio;
+    constructor(nombre, precio, costoenv){
+        super(nombre);
+        this.#precio = precio;
+        this.costoenv = costoenv;
+    }
+
+    calcularPrecioFinal(){
+        let preciofinal = this.#precio + this.costoenv;
+        console.log(preciofinal);
+    }
+
+}
+
+class ProductoDigital extends Producto{
+    #precio;
+    constructor(nombre, precio, descuento){
+        super(nombre);
+        this.#precio = precio;
+        this.descuento = descuento;
+    }
+
+    calcularPrecioFinal(){
+        let preciofinal = this.#precio - this.descuento;
+        console.log(preciofinal);
+    }
+
+}
+
+const proddigital = new ProductoDigital('Shampoo', 1500, 100);
+proddigital.calcularPrecioFinal();
+
+const prodfisico = new ProductoFisico('Shampoo', 1500, 100);
+prodfisico.calcularPrecioFinal();
+
