@@ -6,17 +6,28 @@ class Figura {
 } 
 
 class Circulo extends Figura {
+    constructor(radio){
+        super();
+        this.radio = radio;
+    }
     calcularArea() {
-        console.log("Area circular");
+        let result = Math.PI * Math.pow(this.radio, 2);
+        console.log(result);
     }
 }
 
 class Rectangulo extends Figura{
+    constructor(base, altura){
+        super();
+        this.base = base;
+        this.altura = altura;
+    }
     calcularArea(){
-        console.log("Area rectangular");
+        let res = this.base * this.altura;
+        console.log(res);
     }
 }
 
-const areas = [new Figura(), new Circulo(), new Rectangulo()];
+const areas = [new Figura(), new Circulo(2), new Rectangulo(1, 2)];
 
 areas.forEach(a => a.calcularArea());
